@@ -1,4 +1,4 @@
-# Food Delivery App Backend
+# Social Media App Backend
 
 ## *User End Point*;
 
