@@ -1,10 +1,8 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const { UserModel } = require("../models/user.model");
 const userRouter = express.Router();
-require("dotenv").config();
-const KEY = process.env.KEY;
+
 
 // Register Endpoint
 userRouter.post("/register", async (req, res) => {

@@ -5,13 +5,13 @@ const postSchema = mongoose.Schema({
   user: { type: ObjectId, ref: "User" },
   text: String,
   image: String,
-  createdAt: { type: Date, default: Date.now() },
+  createdAt: { type: Date, default: Date.now },
   likes: [{ type: ObjectId, ref: "User" }],
   comments: [
     {
       user: { type: ObjectId, ref: "User" },
       text: String,
-      createdAt: { type: Date, default: Date.now() },
+      createdAt: { type: Date, default: Date.now },
     },
   ],
 });

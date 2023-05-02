@@ -48,12 +48,10 @@ postRouter.patch("/:id", async (req, res) => {
 });
 
 postRouter.delete("/:id", async (req, res) => {
-  const { id } = req.params;
+  const  id  = req.params.id;
 
   try {
-    const post = await PostModel.findOneAndDelete({ _id: "id" });
-
-    await post.save();
+    const post = await PostModel.findByIdAndDelete(id);
     res.send("Post deleted");
   } catch (error) {
     console.log("Error while Deleting post", error);
@@ -63,7 +61,7 @@ postRouter.delete("/:id", async (req, res) => {
 
 postRouter.post("/:id/like", async (req, res) => {
   const { id } = req.params;
-  const userId = req.body.id;
+  const {userId} = req.body;
 
   try {
     const post = await PostModel.findOne({ _id: id });
